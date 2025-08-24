@@ -1,38 +1,434 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+     font-family: "Orbitron", sans-serif;
+}
+p, h2 {
+    font-family: "Poppins", sans-serif;
+}
+h2, p, h1 {
+    color: #fff;
+}
+.hero {
+    height: 100vh;
+}
+.hero > div {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    width: 80%;
+}
+.hero > div h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+.hero p,
+.hero .link {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.hero p.visible {
+  opacity: 1;
+  transform: scale(1);
+  transition-duration: 1.2s;
+}
+
+.hero .link.visible {
+  opacity: 1;
+  transform: scale(1);
+  transition-duration: 1.4s;
+}
+
+.hero > div p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+.hero > div .link {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0FF0FC;
+    font-weight: 700;
+    padding: 15px 20px;
+    border-radius: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.hero > div .link:hover {
+    transform: scale(1.5);
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #bf00ff;
+}
+.reason > h1, .reason > p {
+    text-align: center;
+}
+.reason > h1 {
+    font-size: 2.7rem;
+}
+.reason > p {
+    width: 80%;
+    margin: 0px auto 30px;
+    font-size: 1.3rem;
+}
+.features {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.features img {
+    width: 20%;
+    border-radius: 20px;
+}
+.features div {
+    width: 75%;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 45px;
+	height: 24px;
+	}
+
+	.switch input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+	}
+
+	.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	-webkit-transition: .4s;
+	transition: .4s; 
+	}
+  .slider:hover, input:checked + .slider:hover {
+    background: hsl(236, 72%, 84%);
+  }
+
+	.slider:before {
+	position: absolute;
+	content: "";
+	height: 18px;
+	width: 18px;
+	left: 3.5px;
+	bottom: 3px;
+	background-color: #fff;
+	-webkit-transition: .4s;
+	transition: .4s;
+	}
+	
+
+	input:checked + .slider {
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	}
+
+	input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+	}
+
+	input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(21px);
+	}
+
+	.slider.round {
+	border-radius: 34px;
+	}
+
+	.slider.round:before {
+	border-radius: 50%;
+	}
+
+    div.switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+    margin: 0px auto 50px;
+  }
+  div.switch p {
+    color: hsl(234, 14%, 74%);
+    font-size: 15px;
+  }
+  div.pricing {
+    margin: auto;
+    text-align: center;
+  }
+  div.all section {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+  div.all section article {
+    width: 30%;
+    border-radius: 20px;
+    opacity: 0.8;
+  }
+  div.all section article > div p {
+    font-size: 2rem;
+  }
+  div.all section article h1{
+    font-size: 3rem;
+    font-family: "Poppins", sans-serif;
+  }
+  div.all section article > p {
+    font-size: 1.2rem;
+  }
+  div.all section article article {
+    width: 100%;
+  }
+  div.all section article article p {
+    font-size: 1rem;
+    margin: 10px 0px;
+  }
+  div.all section article.first {
+    background-color: #fff;
+    padding: 30px 0px;
+  }
+  div.all section article.first button {
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: #fff;
+    border: 1px solid transparent;
+  }
+  div.all section article.first button:hover {
+    background: transparent;
+    cursor: pointer;
+    color: hsl(237, 63%, 64%);
+    border-color: hsl(237, 63%, 64%);
+  }
+  div.all section article.first article p {
+    color: hsl(232, 13%, 33%);
+  }
+  div.all section article.first > p {
+    color: hsl(232, 13%, 33%);
+  }
+  div.all section article.first > div p {
+    color: hsl(232, 13%, 33%);
+  }
+  div.all section article.first h1 {
+    color: hsl(232, 13%, 33%);
+  }
+  div.all section article.second {
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    padding: 30px 0px;
+  }
+  div.all section article.second button {
+    background-color: #fff;
+    color: hsl(237, 63%, 64%);
+    border: 1px solid #fff;
+  }
+  div.all section article.second button:hover {
+    background-color: transparent;
+    cursor: pointer;
+    color: #fff;
+  }
+  div.all section article.second article p {
+    color: #fff;
+    text-align: center;
+  }
+  div.all section article.second > p {
+    color: #fff;
+  }
+  div.all section article.second h1 {
+    color: #fff;
+  }
+  hr {
+    width: 85%;
+    color: #fff;
+    border-color: #fff;
+    height: 0.1px;
+  }
+  button {
+    width: 85%;
+    margin-top: 25px;
+    padding: 10px 0px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+.price {
+  opacity: 0;
+  transform: scale(0.8); 
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.price.visible {
+  opacity: 1;
+  transform: scale(1); 
+}
+
+.testimonials {
+    width: 100%;
+    margin: 50px auto 0px;
+    text-align: center;
+}
+.slide {
+    margin-top: 30px;
+    justify-content: space-between;
+     overflow: hidden;
+    width: 100%;
+    position: relative;
+
+}
+.slider-track {
+    animation: scroll 20s linear infinite;
+    display: flex;
+}
+.slider-track > * {
+  flex: 0 0 300px;
+  margin-right: 20px;
+}
+
+
+footer {
+    background-color: #1B1F3B;
+    opacity: 0.7;
+    padding: 30px 10px;
+    text-align: center;
+}
+footer p {
+    font-size: 1.2rem;
+}
+footer div {
+    display: flex;
+    margin: 20px auto;
+    width: 30%;
+    justify-content: space-between;
+}
+footer div img {
+    width: 30%;
+    margin: auto;
+    display: block;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
+.testimonials div img {
+    width: 50%;
+    border-radius: 50%;
+}
 
-.App-header {
-  background-color: #282c34;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.scroll-stack-scroller {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow-y: auto;
+  overflow-x: visible;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: scroll-position;
+}
+
+.scroll-stack-inner {
+  padding: 20vh 5rem 0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.scroll-stack-card {
+    margin: auto;
+    border: 2px solid #00FFFF;
+  background-color: #1B1F3B;
+  opacity: 0.95;
+  transform-origin: top center;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+ padding: 40px; 
+  width: 80%;
+  border-radius: 40px;
+  box-sizing: border-box;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scroll-stack-end {
+  width: 100%;
+  height: 20rem;
 }
+
+
+
+
+
+
+
+  @media screen and (max-width: 850px) {
+    .hero > div {
+        width: 95%;
+    }
+    .scroll-stack-card  {
+        width: 95%;
+    }
+    div.all section {
+      display: block;
+      width: 100%;
+    }
+    .reason > p {
+        width: 95%;
+    }
+    .features img {
+        width: 30%;
+    }  
+.features div {
+    width: 65%;
+}
+    div.all section article {
+      width: 90%;
+      margin: auto;
+      margin-top: 30px;
+    }
+    div.all section article.first, div.all section article.first:nth-child(1) {
+      border-radius: 10px;
+    }
+    div.switch {
+      width: 70%;
+    }
+    footer div img {
+        width: 50%;
+    }
+  }
