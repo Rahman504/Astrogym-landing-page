@@ -404,6 +404,9 @@ footer div img {
     .scroll-stack-card  {
         width: 95%;
     }
+    .scroll-stack-end {
+        height: 40rem;
+    }
     div.all section {
       display: block;
       width: 100%;
